@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Jess Sang" />
+    <meta name="description" content="Let's Date - Date Inspiration" />
+    <meta
+      name="keywords"
+      content="date, date night, date ideas, date planner, date inspiration"
+    />
+    <link rel="stylesheet" href="./pages/index.css" />
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <title>Let's Date</title>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img
+          src="./images/lets-date_logo.svg"
+          alt="Let's Date Logo"
+          class="header__logo"
+        />
+        <p class="header__title">Let's Date</p>
+      </header>
+      <main class="content">
+        <ul class="cards page__section">
+          <template id="card-template">
+            <li class="card">
+              <div class="card__image-wrapper">
+                <button class="card__delete-button" type="button"></button>
+                <img src="" alt="" class="card__image" />
+              </div>
+              <div class="card__footer">
+                <h2 class="card__title"></h2>
+                <button class="card__save-button" type="button"></button>
+              </div>
+            </li>
+          </template>
+        </ul>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">2025 &copy; Let's Date</p>
+      </footer>
+    </div>
+  </body>
+</html>

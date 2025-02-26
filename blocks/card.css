@@ -2,31 +2,56 @@
   margin: 0;
   list-style-type: none;
   position: relative;
+  border: 2.5px solid #00000080;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.card:hover {
+  border: 2px solid #00000050;
+  cursor: pointer;
+  background-color: #d3d2d2;
+}
+
+.card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card__icon {
-  height: 30px;
-  width: 30px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   border-radius: 8px;
   border: none;
   display: block;
 }
 
-.card__delete-button {
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  padding-top: 20px;
+}
+
+.card__delete-btn {
   position: absolute;
   top: 10px;
   right: 10px;
   background: transparent url(../images/delete-icon.svg) center no-repeat;
-  width: 25px;
-  height: 25px;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
   border: none;
   cursor: pointer;
   padding: 0;
 }
 
-.card__delete-button:hover {
+.card__delete-btn:hover {
   background: transparent url(../images/delete-icon_hover.svg) center no-repeat;
+  background-size: contain;
 }
 
 .card__footer {
@@ -36,37 +61,42 @@
   margin: 12px 0 0;
 }
 
-.card__title {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 500;
-  line-height: 1.2;
+.card__description {
+  font-size: 18px;
+  line-height: 1.5;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 350px;
+  margin: 0;
+  padding: 20px 0;
 }
 
-.card__save-button {
+.card__save-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
   background: transparent url(../images/save-icon.svg) center no-repeat;
-  width: 20px;
-  height: 20px;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
   border: none;
-  opacity: 0.4;
   cursor: pointer;
   padding: 0;
 }
 
-.card__save-button:hover {
-  opacity: 1;
+.card__save-btn:hover {
+  background: transparent url(../images/save-icon_hover.svg) center no-repeat;
+  background-size: contain;
 }
 
-.card__save-button_saved {
+.card__save-btn_saved {
   background: transparent url(../images/save-icon_saved.svg) center no-repeat;
+  background-size: contain;
   opacity: 1;
 }
 
-.card__save-button_saved:hover {
+.card__save-btn_saved:hover {
   opacity: 0.5;
 }
 
@@ -75,17 +105,17 @@
     max-width: 288px;
     margin: 0 auto;
   }
-  .card__image {
-    width: 288px;
-    height: 288px;
+  .card__icon {
+    width: 20px;
+    height: 20px;
   }
   .card__title {
     font-size: 16px;
     line-height: 1;
     max-width: 260px;
   }
-  .card__save-button {
-    width: 20px;
+  .card__save-btn {
+    width: 18px;
     height: 18px;
     background-size: contain;
     background-repeat: no-repeat;

@@ -14,7 +14,7 @@ export const gameIcon = document.createElement("img");
 gameIcon.src = "../images/game-icon.svg";
 
 export const nightIcon = document.createElement("img");
-natureIcon.src = "../images/night-icon.svg";
+nightIcon.src = "../images/night-icon.svg";
 
 export const dayIcon = document.createElement("img");
 dayIcon.src = "../images/day-icon.svg";

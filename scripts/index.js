@@ -13,7 +13,7 @@ const modals = document.querySelectorAll(".modal");
 
 const renderCard = (item) => {
   const card = generateCard(item);
-  cardsList.prepend(card);
+  cardsList.append(card);
 };
 
 const generateCard = (data) => {
@@ -27,38 +27,38 @@ initialCards.forEach((item) => {
   renderCard(item);
 });
 
-function openModal(modal) {
-  modal.classList.add("modal_opened");
-  document.addEventListener("keyup", closeModalEsc);
-}
+// function openModal(modal) {
+//   modal.classList.add("modal_opened");
+//   document.addEventListener("keyup", closeModalEsc);
+// }
 
-function closeModal(modal) {
-  modal.classList.remove("modal_opened");
-  document.removeEventListener("keyup", closeModalEsc);
-}
+// function closeModal(modal) {
+//   modal.classList.remove("modal_opened");
+//   document.removeEventListener("keyup", closeModalEsc);
+// }
 
-function closeModalEsc(evt) {
-  modals.forEach((modal) => {
-    if (modal.classList.contains("modal_opened") && evt.key === "Escape") {
-      closeModal(modal);
-    }
-  });
-}
+// function closeModalEsc(evt) {
+//   modals.forEach((modal) => {
+//     if (modal.classList.contains("modal_opened") && evt.key === "Escape") {
+//       closeModal(modal);
+//     }
+//   });
+// }
 
-closeButtons.forEach((button) => {
-  const modal = button.closest(".modal");
-  button.addEventListener("click", () => {
-    closeModal(modal);
-  });
-});
+// closeButtons.forEach((button) => {
+//   const modal = button.closest(".modal");
+//   button.addEventListener("click", () => {
+//     closeModal(modal);
+//   });
+// });
 
-modals.forEach((modal) => {
-  modal.addEventListener("click", function (evt) {
-    if (
-      modal.classList.contains("modal_opened") &&
-      evt.target.classList.contains("modal")
-    ) {
-      closeModal(modal);
-    }
-  });
-});
+// modals.forEach((modal) => {
+//   modal.addEventListener("click", function (evt) {
+//     if (
+//       modal.classList.contains("modal_opened") &&
+//       evt.target.classList.contains("modal")
+//     ) {
+//       closeModal(modal);
+//     }
+//   });
+// });

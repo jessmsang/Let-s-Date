@@ -4,16 +4,6 @@ class Card {
     this._cardTemplateEl = document.querySelector(selector);
   }
 
-  // _setEventListeners() {
-  //   this._handleOpenModal();
-  // }
-
-  // _handleOpenModal() {
-  //   this._cardEl.addEventListener("click", () => {
-  //     console.log("clicked");
-  //   });
-  // }
-
   getCardTemplate() {
     this._cardEl = this._cardTemplateEl.content
       .querySelector(".card")
@@ -29,8 +19,6 @@ class Card {
     this._cardImageEl.alt = this._data.title;
     this._cardTitleEl.textContent = this._data.title;
     this._cardDescriptionEl.textContent = this._data.description;
-
-    // this._setEventListeners();
 
     return this._cardEl;
   }

@@ -1,41 +1,8 @@
 class Modal {
-  constructor(data, selector) {
-    this.data = data;
+  constructor(card, selector) {
+    this.card = card;
     this._modalTemplateEl = document.querySelector(selector);
-    this._setEventListeners;
   }
-
-  // _setEventListeners() {
-  //   this._handleOpenModal();
-  // }
-  //   this._handleCloseModal();
-  //   this._handleCloseModalEsc();
-  // }
-
-  //   this._cardEl.addEventListener("click", () => {
-  //     this._modalEl.classList.add("modal_opened");
-  //     document.addEventListener("keyup", this._handleCloseModalEsc);
-  //   });
-  // }
-
-  // _handleCloseModal() {
-  //   this._cardEl.addEventListener("click", () => {
-  //     this._modalEl.classList.remove("modal_opened");
-  //     document.removeEventListener("keyup", this._handleCloseModalEsc);
-  //   });
-  // }
-
-  // _handleCloseModalEsc(evt) {
-  //   this._modals = document.querySelectorAll(".modal");
-  //   this._modals.forEach((modal) => {
-  //     if (
-  //       this._modal.classList.contains("modal_opened") &&
-  //       evt.key === "Escape"
-  //     ) {
-  //       this._handleCloseModal();
-  //     }
-  //   });
-  // }
 
   getModalTemplate() {
     this._modalEl = this._modalTemplateEl.content
@@ -53,8 +20,6 @@ class Modal {
     this._modalImageEl.alt = this.cardTitleEl;
     this._modalTitleEl.textContent = this.cardTitleEl;
     this._modalDescriptionEl.textContent = this.cardDescriptionEl;
-
-    // this._setEventListeners();
 
     return this._modalEl;
   }

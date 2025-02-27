@@ -29,8 +29,8 @@
 .header__add-btn:hover {
   background: transparent url(../images/add-icon_hover.svg) center no-repeat;
   background-size: contain;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border: none;
   padding: 0;
   cursor: pointer;

@@ -25,7 +25,7 @@
         <button class="header__add-btn"></button>
       </header>
       <main class="content">
-        <div class="cards page__section">
+        <div class="cards">
           <template id="card-template">
             <div class="card">
               <div class="card__header">
@@ -44,20 +44,13 @@
       <footer class="footer">
         <p class="footer__text">2025 &copy; Let's Date by Jess Sang</p>
       </footer>
-      <div class="modals page__section">
-        <template id="modal-template">
-          <div class="modal modal_type_preview modal_opened" id="preview-modal">
-            <div class="modal__container modal__container_type_preview">
-              <button
-                type="button"
-                class="modal__close-btn modal__close-btn_type_preview"
-              ></button>
-              <img src="" alt="" class="modal__image" />
-              <h3 class="modal__title"></h3>
-              <p class="modal__description"></p>
-            </div>
-          </div>
-        </template>
+      <div class="modal" id="preview-modal">
+        <div class="modal__container">
+          <button type="button" class="modal__close-btn"></button>
+          <img src="" alt="" class="modal__image" />
+          <h3 class="modal__title"></h3>
+          <p class="modal__description"></p>
+        </div>
       </div>
     </div>
     <script type="module" src="./scripts/index.js"></script>

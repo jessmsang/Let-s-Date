@@ -45,7 +45,7 @@ const initialCards = [
     image:
       "https://media.gettyimages.com/id/1215979835/vector/couple-reading-books-on-large-book.jpg?s=612x612&w=0&k=20&c=NeHhW9dBH73xjwcCHXfizDQX6ChGE1o8bt0BLQ-T52A=",
     description:
-      "A book club for two. Bonus points if you select a book that will challenge you to grow together (i.e. Brené Brown).",
+      "A book club for two! Bonus points if you select a book that will challenge you to grow together (i.e. Brené Brown).",
   },
   {
     title: "Puzzle night",

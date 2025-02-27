@@ -4,6 +4,12 @@ import Card from "../components/Card.js";
 
 const cardsList = document.querySelector(".cards");
 
+function openPreviewModal() {
+  const previewModal = document.querySelector("#preview-modal");
+  previewModal.classList.add("modal_opened");
+  return previewModal;
+}
+
 const renderCard = (item) => {
   const card = generateCard(item);
   cardsList.append(card);
@@ -12,6 +18,8 @@ const renderCard = (item) => {
 const generateCard = (data) => {
   const card = new Card(data, "#card-template");
   const cardEl = card.getCardTemplate();
+
+  cardEl.addEventListener("click", openPreviewModal);
 
   return cardEl;
 };

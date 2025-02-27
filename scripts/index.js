@@ -1,13 +1,14 @@
 import initialCards from "../utils/initial-cards.js";
 import Card from "../components/Card.js";
+// import Modal from "../components/Modal.js";
 
 const cardsList = document.querySelector(".cards");
 
-const previewModal = document.querySelector("#preview-modal");
-const previewModalTitle = previewModal;
-const previewModalCaption = previewModal.querySelector(".modal__caption");
+//const previewModal = document.querySelector("#preview-modal");
+//const previewModalTitle = previewModal;
+//const previewModalCaption = previewModal.querySelector(".modal__caption");
 
-const closeButtons = document.querySelectorAll(".modal__close-button");
+// const closeButtons = document.querySelectorAll(".modal__close-button");
 
 const modals = document.querySelectorAll(".modal");
 
@@ -27,7 +28,16 @@ initialCards.forEach((item) => {
   renderCard(item);
 });
 
-// function openModal(modal) {
+// const generateModal = (data) => {
+//   const modal = new Modal(data, "#modal-template");
+//   const modalEl = modal.getModalTemplate();
+
+//   return modalEl;
+// };
+
+// generateModal();
+
+// function openModal() {
 //   modal.classList.add("modal_opened");
 //   document.addEventListener("keyup", closeModalEsc);
 // }

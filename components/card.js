@@ -1,36 +1,36 @@
 class Card {
   constructor(data, selector) {
     this._data = data;
-    this._templateEl = document.querySelector(selector);
+    this._cardTemplateEl = document.querySelector(selector);
   }
 
-  _setEventListeners() {
-    // this._handleDeleteBtn();
-  }
+  // _setEventListeners() {
+  //   this._handleOpenModal();
+  // }
 
-  // _handleDeleteBtn() {
-  //   this._todoDeleteBtn.addEventListener("click", () => {
-  //     this._todoElement.remove();
+  // _handleOpenModal() {
+  //   this._cardEl.addEventListener("click", () => {
+  //     console.log("clicked");
   //   });
   // }
 
   getCardTemplate() {
-    this._cardEl = this._templateEl.content
+    this._cardEl = this._cardTemplateEl.content
       .querySelector(".card")
       .cloneNode(true);
 
-    this._cardIconEl = this._cardEl.querySelector(".card__icon");
+    this._cardImageEl = this._cardEl.querySelector(".card__image");
     this._cardTitleEl = this._cardEl.querySelector(".card__title");
     this._cardDescriptionEl = this._cardEl.querySelector(".card__description");
     this._cardDeleteBtn = this._cardEl.querySelector(".card__delete-btn");
     this._cardSaveBtn = this._cardEl.querySelector(".card__save-btn");
 
-    this._cardIconEl.src = this._data.icon;
-    this._cardIconEl.alt = this._data.icon;
+    this._cardImageEl.src = this._data.image;
+    this._cardImageEl.alt = this._data.title;
     this._cardTitleEl.textContent = this._data.title;
     this._cardDescriptionEl.textContent = this._data.description;
 
-    this._setEventListeners();
+    // this._setEventListeners();
 
     return this._cardEl;
   }

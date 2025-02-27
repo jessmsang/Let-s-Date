@@ -2,6 +2,8 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
 }
 
 .header__logo {
@@ -13,4 +15,23 @@
   font-size: 40px;
   margin: 0;
   padding-left: 20px;
+}
+
+.header__add-btn {
+  background: transparent url(../images/add-icon.svg) center no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+}
+
+.header__add-btn:hover {
+  background: transparent url(../images/add-icon_hover.svg) center no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }

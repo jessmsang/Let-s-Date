@@ -5,14 +5,23 @@ class Card {
   }
 
   _setEventListeners() {
-    this.openPreviewModal();
+    this._openPreviewModal();
   }
 
-  openPreviewModal() {
+  _openPreviewModal() {
     this._cardEl.addEventListener("click", () => {
       this._modal = document.querySelector(".modal");
       this._modal.classList.add("modal_opened");
       this.getPreviewModal();
+    });
+  }
+
+  // _handleCardSaveBtn() {}
+
+  _handleModalCloseBtn() {
+    this._modalCloseBtn = this._previewModal.querySelector(".modal__close-btn");
+    this._modalCloseBtn.addEventListener("click", () => {
+      this._modal.classList.remove("modal_opened");
     });
   }
 
@@ -28,6 +37,8 @@ class Card {
     this._previewModalImage.alt = this._data.title;
     this._previewModalTitle.textContent = this._data.title;
     this._previewModalDescription.textContent = this._data.description;
+
+    this._handleModalCloseBtn();
 
     return this._previewModal;
   }

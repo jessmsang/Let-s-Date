@@ -27,7 +27,7 @@
       <main class="content">
         <div class="cards">
           <template id="card-template">
-            <div class="card">
+            <div class="card card_modal">
               <div class="card__header">
                 <img src="" alt="" class="card__image" />
                 <h2 class="card__title"></h2>
@@ -47,9 +47,11 @@
       <div class="modal" id="preview-modal">
         <div class="modal__container">
           <button type="button" class="modal__close-btn"></button>
-          <img src="" alt="" class="modal__image" />
-          <h3 class="modal__title"></h3>
-          <p class="modal__description"></p>
+          <div class="modal__content">
+            <img src="" alt="" class="modal__image" />
+            <h3 class="modal__title"></h3>
+            <p class="modal__description"></p>
+          </div>
         </div>
       </div>
     </div>

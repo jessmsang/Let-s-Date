@@ -5,10 +5,18 @@ class Card {
   }
 
   _setEventListeners() {
-    this._getPreviewModalView();
+    this.openPreviewModal();
   }
 
-  _getPreviewModalView() {
+  openPreviewModal() {
+    this._cardEl.addEventListener("click", () => {
+      this._modal = document.querySelector(".modal");
+      this._modal.classList.add("modal_opened");
+      this.getPreviewModal();
+    });
+  }
+
+  getPreviewModal() {
     this._previewModal = document.querySelector("#preview-modal");
     this._previewModalImage = this._previewModal.querySelector(".modal__image");
     this._previewModalTitle = this._previewModal.querySelector(".modal__title");

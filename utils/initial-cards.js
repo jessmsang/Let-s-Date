@@ -154,7 +154,7 @@ const initialCards = [
     title: "Go rock climbing",
     image:
       "https://img.freepik.com/free-vector/indoor-rock-climbing-gym_1308-106471.jpg?ga=GA1.1.1458345701.1740069077&semt=ais_hybrid",
-    description: "Go rock climbing at a local rock climbing gym.",
+    description: "Go rock climbing at a local rock climbing gym!",
   },
   {
     title: "Trader Joe's dinner date",

@@ -16,12 +16,38 @@ class Card {
     });
   }
 
-  // _handleCardSaveBtn() {}
+  _handleModalClose() {
+    this._handleModalCloseBtnClick();
+    this._handleModalCloseEsc();
+    this._handleModalCloseModalClick();
+  }
 
-  _handleModalCloseBtn() {
+  _handleModalCloseBtnClick() {
     this._modalCloseBtn = this._previewModal.querySelector(".modal__close-btn");
     this._modalCloseBtn.addEventListener("click", () => {
       this._modal.classList.remove("modal_opened");
+    });
+  }
+
+  _handleModalCloseEsc() {
+    document.addEventListener("keyup", (EventTarget) => {
+      if (
+        this._modal.classList.contains("modal_opened") &&
+        EventTarget.key === "Escape"
+      ) {
+        this._modal.classList.remove("modal_opened");
+      }
+    });
+  }
+
+  _handleModalCloseModalClick() {
+    this._modal.addEventListener("click", (EventTarget) => {
+      if (
+        this._modal.classList.contains("modal_opened") &&
+        EventTarget.target.classList.contains("modal")
+      ) {
+        this._modal.classList.remove("modal_opened");
+      }
     });
   }
 
@@ -38,7 +64,7 @@ class Card {
     this._previewModalTitle.textContent = this._data.title;
     this._previewModalDescription.textContent = this._data.description;
 
-    this._handleModalCloseBtn();
+    this._handleModalClose();
 
     return this._previewModal;
   }

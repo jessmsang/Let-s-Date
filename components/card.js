@@ -5,6 +5,8 @@ class Card {
   }
 
   _setEventListeners() {
+    this._handleModalSaveBtn();
+    this._handleCardDeleteBtn();
     this._openPreviewModal();
   }
 
@@ -59,6 +61,12 @@ class Card {
     });
   }
 
+  _handleCardDeleteBtn() {
+    this._cardDeleteBtn.addEventListener("click", () => {
+      this._cardEl.remove();
+    });
+  }
+
   getPreviewModal() {
     this._previewModal = document.querySelector("#preview-modal");
     this._previewModalImage = this._previewModal.querySelector(".modal__image");
@@ -94,7 +102,6 @@ class Card {
     // this._cardDescriptionEl.textContent = this._data.description;
 
     this._setEventListeners();
-    this._handleModalSaveBtn();
 
     return this._cardEl;
   }

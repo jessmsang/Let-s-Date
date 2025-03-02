@@ -1,27 +1,13 @@
 @font-face {
-  font-family: "Roboto Slab";
+  font-family: "Poller One";
   font-style: normal;
   font-weight: 400;
-  src: url(../vendor/fonts/roboto-slab_normal.ttf) format("truetype");
+  src: url(../vendor/fonts/poller-one-normal.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: "Gravitas One";
+  font-family: "M Plus";
   font-style: normal;
   font-weight: 400;
-  src: url(../vendor/fonts/gravitas-one-normal.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Lexend";
-  font-style: light;
-  font-weight: 200;
-  src: url(../vendor/fonts/lexend-light.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Bevan";
-  font-style: normal;
-  font-weight: 400;
-  src: url(../vendor/fonts/bevan-normal.ttf) format("truetype");
+  src: url(../vendor/fonts/m-plus-normal.ttf) format("truetype");
 }

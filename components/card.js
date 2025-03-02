@@ -9,8 +9,10 @@ class Card {
   }
 
   _openPreviewModal() {
-    this._cardEl.addEventListener("click", () => {
-      this._modal = document.querySelector(".modal");
+    this._modal = document.querySelector(".modal");
+    this._cardHeaderEl = this._cardEl.querySelector(".card__header");
+
+    this._cardHeaderEl.addEventListener("click", () => {
       this._modal.classList.add("modal_opened");
       this.getPreviewModal();
     });
@@ -51,6 +53,12 @@ class Card {
     });
   }
 
+  _handleModalSaveBtn() {
+    this._cardSaveBtn.addEventListener("click", () => {
+      this._cardSaveBtn.classList.toggle("card__save-btn_saved");
+    });
+  }
+
   getPreviewModal() {
     this._previewModal = document.querySelector("#preview-modal");
     this._previewModalImage = this._previewModal.querySelector(".modal__image");
@@ -83,9 +91,10 @@ class Card {
     this._cardImageEl.src = this._data.image;
     this._cardImageEl.alt = this._data.title;
     this._cardTitleEl.textContent = this._data.title;
-    this._cardDescriptionEl.textContent = this._data.description;
+    // this._cardDescriptionEl.textContent = this._data.description;
 
     this._setEventListeners();
+    this._handleModalSaveBtn();
 
     return this._cardEl;
   }

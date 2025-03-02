@@ -28,7 +28,7 @@
   border-radius: 8px;
   object-fit: contain;
   border: none;
-  padding: 60px;
+  padding: 50px;
   position: relative;
 }
 
@@ -66,7 +66,6 @@
 .modal__title {
   max-width: 630px;
   font-size: 32px;
-  font-weight: 500;
   line-height: 1;
   margin: 0;
   padding: 30px 0;
@@ -79,8 +78,8 @@
   position: relative;
   top: 8px;
   width: fit-content;
-  font-size: 20px;
-  line-height: 1.2;
+  font-size: 26px;
+  text-align: center;
 }
 
 @media screen and (max-width: 627px) {

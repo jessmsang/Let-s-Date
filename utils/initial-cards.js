@@ -72,7 +72,7 @@ const initialCards = [
     image:
       "https://media.gettyimages.com/id/1125518961/vector/chocolate-fondue-icon.jpg?s=612x612&w=0&k=20&c=JCzoJ6RkIp9erutRksFz5f0JqX1gKQBMYZBe0Hs1M-E=",
     description:
-      "This fondue night can be savory or sweet - or both! Make cheese fondue or chocolate fondue together!",
+      "This fondue night can be savory or sweet - or both! Make cheese fondue or chocolate fondue!",
   },
   {
     title: "Backyard BBQ for Two",

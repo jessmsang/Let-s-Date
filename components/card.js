@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   constructor(data, selector) {
     this._data = data;
     this._cardTemplateEl = document.querySelector(selector);
@@ -106,5 +106,3 @@ class Card {
     return this._cardEl;
   }
 }
-
-export default Card;

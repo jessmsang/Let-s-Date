@@ -1,5 +1,6 @@
 import initialCards from "../utils/initial-cards.js";
 import Card from "../components/Card.js";
+// import Section from "../components/Section.js";
 
 const cardsList = document.querySelector(".cards");
 

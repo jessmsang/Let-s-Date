@@ -1,21 +1,20 @@
-import initialCards from "../utils/initial-cards.js";
+import Section from "../components/Section.js";
 import Card from "../components/Card.js";
-// import Section from "../components/Section.js";
-
-const cardsList = document.querySelector(".cards");
-
-const renderCard = (item) => {
-  const card = generateCard(item);
-  cardsList.append(card);
-};
+import { initialCards /*cardsList*/ } from "../utils/constants.js";
 
 const generateCard = (data) => {
   const card = new Card(data, "#card-template");
-  const cardEl = card.getCardTemplate();
+  const cardEl = card._getView();
 
   return cardEl;
 };
 
-initialCards.forEach((item) => {
-  renderCard(item);
+const section = new Section({
+  items: initialCards,
+  renderer: (item) => {
+    const cardEl = generateCard(item);
+    return cardEl;
+  },
+  containerSelector: ".cards",
 });
+section.renderItems();

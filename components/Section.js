@@ -1,20 +1,18 @@
 export default class Section {
-  constructor({ data }, containerSelector) {
-    this._renderedItems = data;
+  constructor({ items, renderer, containerSelector }) {
+    this._items = items;
+    this._renderer = renderer;
     this._container = document.querySelector(containerSelector);
   }
 
-  setItem(element) {
+  renderItems() {
+    this._items.forEach((item) => {
+      const element = this._renderer(item);
+      this.addItem(element);
+    });
+  }
+
+  addItem(element) {
     this._container.append(element);
   }
-
-  clear() {
-    this._container.innerHTML = "";
-  }
-
-  //   renderItems(isGrid) {
-  //     this.clear();
-
-  //     this._renderedItems.forEach((item) => {});
-  //   }
 }

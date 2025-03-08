@@ -43,67 +43,79 @@
       <footer class="footer">
         <p class="footer__text">2025 &copy; Let's Date by Jess Sang</p>
       </footer>
-      <div class="modal" id="preview-modal">
-        <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
-          <div class="modal__content">
-            <img src="" alt="" class="modal__image" />
-            <h3 class="modal__title"></h3>
-            <p class="modal__description"></p>
+      <div class="modals">
+        <template id="preview-modal-template">
+          <div class="modal" id="#preview-modal">
+            <div class="modal__container">
+              <button type="button" class="modal__close-btn"></button>
+              <div class="modal__content">
+                <img src="" alt="" class="modal__image" />
+                <h3 class="modal__title"></h3>
+                <p class="modal__description"></p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div class="modal" id="add-card-modal">
-        <div class="modal__container">
-          <button type="button" class="modal__close-btn"></button>
-          <h2 class="modal__title">New Date</h2>
-          <form id="add-card-form" class="modal__form" novalidate>
-            <label for="add-card-link-input" class="modal__label">
-              Image Link
-              <input
-                id="add-card-link-input"
-                type="url"
-                class="modal__input"
-                placeholder="Paste a link to the picture"
-                name="link"
-                required
-              />
-              <span class="modal__error" id="add-card-link-input-error"></span>
-            </label>
-            <label for="add-card-title-input" class="modal__label">
-              Title
-              <input
-                id="add-card-title-input"
-                type="text"
-                class="modal__input"
-                placeholder="Type your title"
-                name="name"
-                required
-                minlength="2"
-                maxlength="30"
-              />
-              <span class="modal__error" id="add-card-title-input-error"></span>
-            </label>
-            <label for="add-card-description-input" class="modal__label">
-              Description
-              <input
-                id="add-card-description-input"
-                type="text"
-                class="modal__input"
-                placeholder="Type your description"
-                name="name"
-                required
-                minlength="2"
-                maxlength="30"
-              />
-              <span
-                class="modal__error"
-                id="add-card-description-input-error"
-              ></span>
-            </label>
-            <button type="submit" class="modal__submit-btn">Save</button>
-          </form>
-        </div>
+        </template>
+        <template id="add-card-modal-template">
+          <div class="modal">
+            <div class="modal__container">
+              <button type="button" class="modal__close-btn"></button>
+              <h2 class="modal__title">New Date</h2>
+              <form id="add-card-form" class="modal__form" novalidate>
+                <label for="add-card-link-input" class="modal__label">
+                  Image Link
+                  <input
+                    id="add-card-link-input"
+                    type="url"
+                    class="modal__input"
+                    placeholder="Paste a link to the picture"
+                    name="link"
+                    required
+                  />
+                  <span
+                    class="modal__error"
+                    id="add-card-link-input-error"
+                  ></span>
+                </label>
+                <label for="add-card-title-input" class="modal__label">
+                  Title
+                  <input
+                    id="add-card-title-input"
+                    type="text"
+                    class="modal__input"
+                    placeholder="Type your title"
+                    name="name"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                  />
+                  <span
+                    class="modal__error"
+                    id="add-card-title-input-error"
+                  ></span>
+                </label>
+                <label for="add-card-description-input" class="modal__label">
+                  Description
+                  <input
+                    id="add-card-description-input"
+                    type="text"
+                    class="modal__input"
+                    placeholder="Type your description"
+                    name="name"
+                    required
+                    minlength="2"
+                    maxlength="30"
+                  />
+                  <span
+                    class="modal__error"
+                    id="add-card-description-input-error"
+                  ></span>
+                </label>
+                <button type="submit" class="modal__submit-btn">Save</button>
+              </form>
+            </div>
+          </div>
+        </template>
       </div>
     </div>
     <script type="module" src="./pages/index.js"></script>

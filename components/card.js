@@ -5,13 +5,13 @@ export default class Card {
   }
 
   _getView() {
-    this._cardEl = this._cardTemplateEl.content
+    this.cardEl = this._cardTemplateEl.content
       .querySelector(".card")
       .cloneNode(true);
 
-    this._cardImageEl = this._cardEl.querySelector(".card__image");
-    this._cardTitleEl = this._cardEl.querySelector(".card__title");
-    this._cardDeleteBtn = this._cardEl.querySelector(".card__delete-btn");
+    this._cardImageEl = this.cardEl.querySelector(".card__image");
+    this._cardTitleEl = this.cardEl.querySelector(".card__title");
+    this._cardDeleteBtn = this.cardEl.querySelector(".card__delete-btn");
 
     this._cardImageEl.src = this._data.image;
     this._cardImageEl.alt = this._data.title;
@@ -19,12 +19,12 @@ export default class Card {
 
     this._setEventListeners();
 
-    return this._cardEl;
+    return this.cardEl;
   }
 
   _handleCardDeleteBtn() {
     this._cardDeleteBtn.addEventListener("click", () => {
-      this._cardEl.remove();
+      this.cardEl.remove();
     });
   }
 

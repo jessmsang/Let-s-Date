@@ -1,49 +1,40 @@
-import Card from "./Card.js";
-
 export default class Modal {
   constructor(modalSelector) {
-    this._modalSelector = document.querySelector(modalSelector);
-    this._modal = document.querySelector(".modal");
+    this._modalEl = document.querySelector(modalSelector);
+
+    if (!this._modalEl) {
+      console.error(`Element not found for selector: ${modalSelector}`);
+      return;
+    }
+
+    this._modalCloseBtn = this._modalEl.querySelector(".modal__close-btn");
+    this.setEventListeners();
   }
 
-  _handleModalClose() {
-    this._handleModalCloseBtnClick();
-    this._handleModalCloseEsc();
-    this._handleModalCloseClick();
-  }
-
-  _handleModalCloseBtnClick() {
-    this._modalCloseBtn = this._previewModal.querySelector(".modal__close-btn");
-    this._modalCloseBtn.addEventListener("click", () => {
-      this._modal.classList.remove("modal_opened");
-    });
-  }
-
-  _handleModalCloseEsc() {
-    document.addEventListener("keyup", (EventTarget) => {
+  setEventListeners() {
+    this._modalEl.addEventListener("click", (evt) => {
       if (
-        this._modal.classList.contains("modal_opened") &&
-        EventTarget.key === "Escape"
+        evt.target.classList.contains("modal__close-btn") ||
+        evt.target.classList.contains("modal")
       ) {
-        this._modal.classList.remove("modal_opened");
+        this.close();
       }
     });
   }
 
-  _handleModalCloseClick() {
-    this._modal.addEventListener("click", (EventTarget) => {
-      if (
-        this._modal.classList.contains("modal_opened") &&
-        EventTarget.target.classList.contains("modal")
-      ) {
-        this._modal.classList.remove("modal_opened");
-      }
-    });
+  open() {
+    this._modalEl.classList.add("modal_opened");
+    document.addEventListener("keyup", this._handleEscapeClose);
   }
 
-  _handleModalSaveBtn() {
-    this._cardSaveBtn.addEventListener("click", () => {
-      this._cardSaveBtn.classList.toggle("card__save-btn_saved");
-    });
+  close() {
+    this._modalEl.classList.remove("modal_opened");
+    document.removeEventListener("keyup", this._handleEscapeClose);
   }
+
+  _handleEscapeClose = (evt) => {
+    if (evt.key === "Escape") {
+      this.close();
+    }
+  };
 }

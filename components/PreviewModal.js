@@ -1,31 +1,55 @@
 import Modal from "./Modal.js";
 
-export default class ModalCardPreview extends Modal {
-  constructor(cardSelector) {
-    this._cardSelector = cardSelector;
-    this._modal = document.querySelector(".modal");
-    this._cardHeaderEl = this._cardEl.querySelector(".card__header");
+export default class PreviewModal extends Modal {
+  constructor({ modalSelector, cardSelector, data }) {
+    const previewModalTemplate = document.querySelector(
+      "#preview-modal-template"
+    );
+
+    if (!previewModalTemplate) {
+      console.error("Element not found for selector: #preview-modal-template");
+      return;
+    }
+
+    const previewModalEl =
+      previewModalTemplate.content.cloneNode(true).firstElementChild;
+    previewModalEl.id = modalSelector.replace("#", "");
+    document.body.appendChild(previewModalEl);
+
+    super(`#${previewModalEl.id}`);
+    this._cardEl = document.querySelector(cardSelector);
+    this._data = data;
+
+    if (!this._cardEl) {
+      console.error(`Element not found for selector: ${cardSelector}`);
+      return;
+    }
+
+    this._setEventListeners();
   }
 
   _setEventListeners() {
-    this._handleModalSaveBtn();
-    this._openPreviewModal();
+    super.setEventListeners();
+    this._handleOpenPreviewModal();
   }
-  _openPreviewModal() {
-    this._cardHeaderEl.addEventListener("click", () => {
-      this._modal.classList.add("modal_opened");
-      this.getPreviewModal();
+
+  _handleOpenPreviewModal() {
+    this._cardEl.addEventListener("click", () => {
+      this._updateModalContent();
+      super.open();
     });
   }
 
-  handleOpenPreviewModal() {
+  _updateModalContent() {
+    this._previewModalImage = this._modalEl.querySelector(".modal__image");
+    this._previewModalTitle = this._modalEl.querySelector(".modal__title");
+    this._previewModalDescription = this._modalEl.querySelector(
+      ".modal__description"
+    );
+
     this._previewModalImage.src = this._data.image;
     this._previewModalImage.alt = this._data.title;
     this._previewModalTitle.textContent = this._data.title;
     this._previewModalDescription.textContent = this._data.description;
-
-    this._handleModalClose();
-
-    return this._previewModal;
   }
 }

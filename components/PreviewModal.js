@@ -34,9 +34,11 @@ export default class PreviewModal extends Modal {
   }
 
   _handleOpenPreviewModal() {
-    this._cardEl.addEventListener("click", () => {
-      this._updateModalContent();
-      super.open();
+    this._cardEl.addEventListener("click", (evt) => {
+      if (!evt.target.closest(".card__btns")) {
+        this._updateModalContent();
+        super.open();
+      }
     });
   }
 

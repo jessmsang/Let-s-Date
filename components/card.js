@@ -5,13 +5,14 @@ export default class Card {
   }
 
   _getView() {
-    this.cardEl = this._cardTemplateEl.content
+    this._cardEl = this._cardTemplateEl.content
       .querySelector(".card")
       .cloneNode(true);
 
-    this._cardImageEl = this.cardEl.querySelector(".card__image");
-    this._cardTitleEl = this.cardEl.querySelector(".card__title");
-    this._cardDeleteBtn = this.cardEl.querySelector(".card__delete-btn");
+    this._cardImageEl = this._cardEl.querySelector(".card__image");
+    this._cardTitleEl = this._cardEl.querySelector(".card__title");
+    this._cardDeleteBtn = this._cardEl.querySelector(".card__delete-btn");
+    this._cardSaveBtn = this._cardEl.querySelector(".card__save-btn");
 
     this._cardImageEl.src = this._data.image;
     this._cardImageEl.alt = this._data.title;
@@ -19,16 +20,23 @@ export default class Card {
 
     this._setEventListeners();
 
-    return this.cardEl;
+    return this._cardEl;
   }
 
   _handleCardDeleteBtn() {
     this._cardDeleteBtn.addEventListener("click", () => {
-      this.cardEl.remove();
+      this._cardEl.remove();
+    });
+  }
+
+  _handleCardSaveBtn() {
+    this._cardSaveBtn.addEventListener("click", () => {
+      this._cardSaveBtn.classList.toggle("card__save-btn_saved");
     });
   }
 
   _setEventListeners() {
     this._handleCardDeleteBtn();
+    this._handleCardSaveBtn();
   }
 }
